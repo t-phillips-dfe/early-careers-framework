@@ -17,7 +17,7 @@ COPY public /public
 COPY swagger /swagger
 
 WORKDIR docs
-RUN bundle exec middleman build --build-dir=../public/api-reference
+RUN bundle exec middleman build --build-dir=/public/api-reference
 
 # Stage 1: Download gems and node modules.
 FROM ${BASE_RUBY_IMAGE} AS builder
